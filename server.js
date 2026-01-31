@@ -31,6 +31,9 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const server = http.createServer(app);
 
+// ✅ ADICIONA TRUST PROXY PARA FUNCIONAR NO RENDER
+app.set('trust proxy', 1);
+
 const io = new Server(server, {
   cors: {
     origin: process.env.CLIENT_URL || 'http://localhost:3000',
