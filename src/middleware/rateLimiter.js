@@ -8,6 +8,7 @@ export const loginLimiter = rateLimit({
   },
   standardHeaders: true,
   legacyHeaders: false,
+  trustProxy: true, 
 });
 
 export const registerLimiter = rateLimit({
@@ -16,4 +17,5 @@ export const registerLimiter = rateLimit({
   message: { 
     message: "Muitos registros. Tente novamente em 1 hora." 
   },
+  trustProxy: true, 
 });
